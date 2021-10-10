@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+	<title>Movies</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="auth_layer" id="auth_layer" style="display: none;">
+        <form action="" class="auth_form">
+            <div class="auth_flex">
+                <span class="login_label">Вход</span>
+                <input type="text" placeholder="Логин" class="input" name="login" id="form_login">
+                <input type="password" placeholder="Пароль" class="input" name="password" id="form_password">
+                <div class="checkBox">
+                    <input type="checkbox" name="remember" id="remember_cb">
+                    <label for="remember">Запомнить</label>
+                </div>
+            </div>
+            <input type="submit" value="Войти" class="button auth_button" onclick="authForm(event)">
+        </form>
+    </div>
+
+	<header>
+		<a href="index.html" class="img_link" id="header_link_home"><img src="img/logo.png"></a>
+		<form action="" method="get" class="search_form">
+			<input type="search" id="search" value="Поиск..."> 
+			<button type="submit" id="find_btn">Найти</button>
+		</form>
+		<button type="submit" id="log-in" onclick="authForm(event)">Войти</button>
+	</header>
+
+	<div class="tabs">
+        <div class="tab_btns">
+            <button class="tab_button tab_active" onclick="openTab(event,'films')">Фильмы</button>
+            <button class="tab_button" onclick="openTab(event,'tv')">Телеканалы</button>
+        </div>
+    
+        <div class="tabs_content" id="films">
+            <div class="films_section films_new">
+                <span class="section_label">🔥 Новинки</span>
+                <div class="film_cards">
+
+                    <a href="#" class="film_card">
+                        <div class="img_wrap">
+                            <img src="img/cat.png" alt="" class="film_img">
+                            <p class="img_description">pusto</p>
+                            <span class="film_name">Мульт в кино. Выпуск №103. Некогда грустить!</span>
+                        </div>
+                    </a>
+
+                    <a href="#" class="film_card">
+                        <div class="img_wrap">
+                            <img src="img/batman.png" alt="" class="film_img">
+                            <p class="img_description">pusto</p>
+                            <span class="film_name">Новый Бэтмен</span>
+                        </div>
+                    </a>
+
+                    <a href="#" class="film_card">
+                        <div class="img_wrap">
+                            <img src="img/hollywood.png" alt="" class="film_img">
+                            <p class="img_description">Фильм повествует о череде событий, произошедших в Голливуде в 1969 году, на закате его «золотого века». Известный актер Рик Далтон и его дублер Клифф Бут пытаются найти свое место в стремительно меняющемся мире киноиндустрии.</p>
+                            <span class="film_name">Однажды... в Голливуде</span>
+                        </div>
+                    </a>
+
+                    <a href="#" class="film_card">
+                        <div class="img_wrap">
+                            <img src="img/strip.png" alt="" class="film_img">
+                            <p class="img_description">pusto</p>
+                            <span class="film_name">Стриптизёрши</span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="films_section ganres">
+                <span class="section_label">Жанры</span>
+                <div class="film_cards">
+                    <a href="#" class="film_card ganre_card" id="ganre_comedy">
+                        <span class="ganre_emoji">😁</span>
+                        <span class="ganre_name">Комедии</span>
+                    </a>
+
+                    <a href="#" class="film_card ganre_card" id="ganre_drama">
+                        <span class="ganre_emoji">😭</span>
+                        <span class="ganre_name">Драмы</span>
+                    </a>
+
+                    <a href="#" class="film_card ganre_card" id="ganre_fantastic">
+                        <span class="ganre_emoji">👽</span>
+                        <span class="ganre_name">Фантастика</span>
+                    </a>
+
+                    <a href="#" class="film_card ganre_card" id="ganre_horror">
+                        <span class="ganre_emoji">👻</span>
+                        <span class="ganre_name">Ужасы</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="tabs_content" id="tv" style="display:none">
+            <div class="tv_channels">
+
+                <div class="tv_channel" id="channel_1st">
+                    <div class="channel_logo">
+                        <img src="img/1st.png" alt="" class="channel_logo_img">
+                    </div>
+                    <div class="channel_info">
+                        <span class="channel_name">Первый канал</span>
+                        <div class="channel_program">
+                            <div class="channel_program_show_1 show_first"><span class="channel_program_show_time">13:00</span><span class="channel_program_show_name">Новости (с субтитрами)</span></div>
+                            <div class="channel_program_show_2"><span class="channel_program_show_time">14:00</span><span class="channel_program_show_name">Давай поженимся</span></div>
+                            <div class="channel_program_show_3"><span class="channel_program_show_time">15:00</span><span class="channel_program_show_name">Другие новости</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tv_channel" id="channel_2x2">
+                    <div class="channel_logo">
+                        <img src="img/2x2.png" alt="" class="channel_logo_img">
+                    </div>
+                    <div class="channel_info">
+                        <span class="channel_name">2x2</span>
+                        <div class="channel_program">
+                            <div class="channel_program_show_1 show_first"><span class="channel_program_show_time">13:00</span><span class="channel_program_show_name">МУЛЬТ ТВ. Сезон 4, 7 серия</span></div>
+                            <div class="channel_program_show_2"><span class="channel_program_show_time">14:00</span><span class="channel_program_show_name">ПОДОЗРИТЕЛЬНАЯ СОВА. Сезон 7, 7 серия</span></div>
+                            <div class="channel_program_show_3"><span class="channel_program_show_time">15:00</span><span class="channel_program_show_name">БУРДАШЕВ. Сезон 1, 20 серия</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tv_channel" id="channel_rbk">
+                    <div class="channel_logo">
+                        <img src="img/rbk.png" alt="" class="channel_logo_img">
+                    </div>
+                    <div class="channel_info">
+                        <span class="channel_name">РБК</span>
+                        <div class="channel_program">
+                            <div class="channel_program_show_1 show_first"><span class="channel_program_show_time">13:00</span><span class="channel_program_show_name">ДЕНЬ. Горючая смесь: как бороться с суррогатом на АЗС</span></div>
+                            <div class="channel_program_show_2"><span class="channel_program_show_time">14:00</span><span class="channel_program_show_name">ДЕНЬ. Главные темы</span></div>
+                            <div class="channel_program_show_3"><span class="channel_program_show_time">15:00</span><span class="channel_program_show_name">Главные новости</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tv_channel" id="channel_amedia">
+                    <div class="channel_logo">
+                        <img src="img/amedia.png" alt="" class="channel_logo_img">
+                    </div>
+                    <div class="channel_info">
+                        <span class="channel_name">AMEDIA PREMIUM</span>
+                        <div class="channel_program">
+                            <div class="channel_program_show_1 show_first"><span class="channel_program_show_time">13:00</span><span class="channel_program_show_name">Клиент всегда мёртв</span></div>
+                            <div class="channel_program_show_2"><span class="channel_program_show_time">14:00</span><span class="channel_program_show_name">Голодные игры: Сойка-пересмешница. Часть I</span></div>
+                            <div class="channel_program_show_3"><span class="channel_program_show_time">15:00</span><span class="channel_program_show_name">Секс в большом городе</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tv_channel" id="channel_2x2">
+                    <div class="channel_logo">
+                        <img src="img/2x2.png" alt="" class="channel_logo_img">
+                    </div>
+                    <div class="channel_info">
+                        <span class="channel_name">2x2</span>
+                        <div class="channel_program">
+                            <div class="channel_program_show_1 show_first"><span class="channel_program_show_time">13:00</span><span class="channel_program_show_name">МУЛЬТ ТВ. Сезон 4, 7 серия</span></div>
+                            <div class="channel_program_show_2"><span class="channel_program_show_time">14:00</span><span class="channel_program_show_name">ПОДОЗРИТЕЛЬНАЯ СОВА. Сезон 7, 7 серия</span></div>
+                            <div class="channel_program_show_3"><span class="channel_program_show_time">15:00</span><span class="channel_program_show_name">БУРДАШЕВ. Сезон 1, 20 серия</span></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>  
+
+    <footer class="footer" id="footer">
+        <div class="footer_content">
+            <img src="img/htc-cs-logo.png" alt="" class="htc_logo">
+            <div class="footer_info">
+                <span id="address">426057, Россия, Удмуртская Республика, г. Ижевск, ул. Карла Маркса, 246 (ДК «Металлург»)</span>
+                <span class="phones">+7 (3412) 93-88-61, 43-29-29</span>
+                <a href="https://htc-cs.ru" id="htc_link" target="_blank">htc-cs.ru</a>  
+            </div>
+        </div>
+    </footer>
+      
+      <script src="script.js"></script>
+	
+</body>
+</html>
